@@ -7,7 +7,9 @@
 
 <body>
     <?php 
+        // this is header
         include 'partials/header.php';
+        // this is main
         include 'partials/main.php';
     ?>
 </body>
