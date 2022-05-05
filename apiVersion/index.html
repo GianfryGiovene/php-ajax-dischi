@@ -15,17 +15,21 @@
 </head>
 
 <body>
-    <div>
+    <div id="app">
         <!-- header -->
         <header class="container-fluid">
-            <div class="align-items-center d-flex justify-content-start">
+            <div class="align-items-center d-flex justify-content-between">
                 <img class="flex-item" src="../img/spotify-logo.png" alt="logo" />
+                <select @change="getOption($event)" name="">
+                    <option value="">All</option>
+                    <option v-for="genre in genreNoDuplicate" :value="genre">{{ genre }}</option>
+                </select>
             </div>
         </header>
         <!-- main -->
-        <main id="app" class="container-fluid">
-            <div id="card-container" class="container justify-content-between d-flex flex-wrap gap-3">
-                <div v-for="album in albums"
+        <main class="container-fluid">
+            <div id="card-container" class="container justify-content-between align-items-start d-flex flex-wrap gap-3">
+                <div v-for="album in filteredGenre"
                     class="text-white d-flex flex-column align-items-center col-2 ggf-card p-2">
                     <div>
                         <img class="w-100" :src="album.poster" alt="poster">

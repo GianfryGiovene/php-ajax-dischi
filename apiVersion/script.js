@@ -3,11 +3,33 @@ const app = new Vue(
         el: '#app',
         data:{
             albums: [],
+            allGenres: [],
+            genreValue:'',
+            genreDuplicate:[],
+            genreNoDuplicate:[]
         },
-        created(){
+        methods:{
+            genreNoDuplicateArrayGenerator(){
+                this.albums.forEach(element => {
+                    this.genreDuplicate.push(element.genre);   
+                });
+                this.genreNoDuplicate = [...new Set(this.genreDuplicate)];
+            },
+            getOption(e){
+                this.genreValue = e.target.value;
+            }
+        },
+        
+        mounted(){
             axios.get('./dataApi.php').then(response=>{
                 this.albums = response.data;
-            }).catch(error=>console.log('error',error))
+                this.genreNoDuplicateArrayGenerator();
+            }).catch(error=>console.log('error',error));
+        },
+        computed:{
+            filteredGenre(){
+                return this.albums.filter(item=> item.genre.toLowerCase().includes(this.genreValue.toLowerCase()))
+            }
         }
     }
 )
