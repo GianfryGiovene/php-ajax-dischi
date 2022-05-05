@@ -15,7 +15,6 @@ header div {
 }
 header div > img{
     height: 80%;
-    border: 1px solid green;
 }
 
 /* -----/ HEADER------- */
@@ -27,7 +26,15 @@ main{
 }
 
 #card-container{
-    border: 1px solid red;
+    padding: 40px 0;
     height: 100%;
+}
+
+.ggf-card{
+    background-color: var(--secondary-bg-color);
+}
+
+.ggf-card span{
+    color: #7e7f80;
 }
 /* -----/ MAIN------- */
