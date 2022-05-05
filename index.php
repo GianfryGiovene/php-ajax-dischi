@@ -1,3 +1,5 @@
+<?php include 'data/data.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <!--  this is head-->

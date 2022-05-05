@@ -3,8 +3,9 @@
     --primary-bg-color: #1e2d3b;
 }
 
+
+/* -----HEADER------- */
 header{
-    border: 1px solid red;
     background-color: var(--secondary-bg-color);
     height: 80px;
     
@@ -16,3 +17,17 @@ header div > img{
     height: 80%;
     border: 1px solid green;
 }
+
+/* -----/ HEADER------- */
+
+/* -----MAIN------- */
+main{
+    background-color: var(--primary-bg-color);
+    height: calc(100vh - 80px);
+}
+
+#card-container{
+    border: 1px solid red;
+    height: 100%;
+}
+/* -----/ MAIN------- */
