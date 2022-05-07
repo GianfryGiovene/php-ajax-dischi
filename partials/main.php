@@ -2,7 +2,7 @@
 <main class="container-fluid">
     <div id="card-container" class="container justify-content-between d-flex flex-wrap gap-3">
         <?php 
-        foreach($albums as $album){
+        foreach($database as $album){
         ?>
         <div class="text-white d-flex flex-column align-items-center col-2 ggf-card p-2">
             <div>

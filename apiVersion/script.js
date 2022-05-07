@@ -21,7 +21,7 @@ const app = new Vue(
         },
         
         mounted(){
-            axios.get('./dataApi.php').then(response=>{
+            axios.get('http://localhost/php-ajax-dischi/apiVersion/dataApi.php').then(response=>{
                 this.albums = response.data;
                 this.genreNoDuplicateArrayGenerator();
             }).catch(error=>console.log('error',error));
@@ -32,4 +32,4 @@ const app = new Vue(
             }
         }
     }
-)
+)  

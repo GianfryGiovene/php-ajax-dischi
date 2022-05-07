@@ -72,4 +72,20 @@
         ],  
     ];
 
+
+    if(empty($_GET) || empty($_GET['search'])){
+
+        $database = $albums;
+
+    }else{
+        $term = strtolower($_GET['search']);
+        $filteredArray=[];
+        foreach($albums as $album){
+            if(strpos(strtolower($album['genre']), $term)!== false){
+                $filteredArray[] = $album;
+            }
+        }
+        $database = $filteredArray;
+        
+    }
 ?>
